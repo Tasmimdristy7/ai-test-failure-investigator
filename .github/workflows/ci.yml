@@ -1,0 +1,41 @@
+name: SDET quality gate
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test-layers:
+    name: ${{ matrix.layer }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - layer: core
+            command: python -m investigator.validate_suite --expected-tests 17 --expected-failures 0 --artifact artifacts/core.json tests/test_clustering.py tests/test_quality_gate.py tests/regression
+          - layer: baseline
+            command: python run_demo.py
+          - layer: phase1
+            command: python -m investigator.validate_suite --expected-tests 10 --expected-failures 6 --artifact artifacts/phase1.json tests/test_phase1.py
+          - layer: api
+            command: python -m investigator.validate_suite --expected-tests 100 --expected-failures 11 --artifact artifacts/api.json tests/api
+          - layer: integration
+            command: python -m investigator.validate_suite --expected-tests 20 --expected-failures 0 --artifact artifacts/integration.json tests/integration
+          - layer: browser
+            command: python -m investigator.validate_suite --expected-tests 5 --expected-failures 1 --artifact artifacts/ui.json tests/ui
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install -e ".[dev]"
+      - if: matrix.layer == 'browser'
+        run: python -m playwright install --with-deps chromium
+      - name: Validate outcomes
+        run: ${{ matrix.command }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: evidence-${{ matrix.layer }}
+          path: artifacts/

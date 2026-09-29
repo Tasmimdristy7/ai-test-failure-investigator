@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Field Supply | Shop</title>
+  <style>
+    :root { color-scheme: light; --ink: #18211d; --paper: #f3f4ef; --green: #25664e; --line: #d5d9d0; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font: 16px/1.5 Georgia, serif; }
+    header { display: flex; justify-content: space-between; align-items: center; padding: 20px max(5vw, 20px); border-bottom: 1px solid var(--line); background: #fff; }
+    header strong { font: bold 19px/1.1 Georgia, serif; letter-spacing: .04em; }
+    header nav { display: flex; gap: 20px; align-items: center; font: 14px Arial, sans-serif; }
+    main { max-width: 1040px; margin: 42px auto; padding: 0 20px; }
+    h1 { margin: 0 0 8px; font-size: 38px; font-weight: 400; }
+    .intro { margin: 0 0 24px; color: #59635d; }
+    .tools { display: flex; gap: 8px; margin-bottom: 24px; }
+    input, button { min-height: 42px; border: 1px solid var(--line); border-radius: 2px; padding: 9px 12px; font: 14px Arial, sans-serif; }
+    input { background: #fff; }
+    button { cursor: pointer; background: var(--green); color: white; border-color: var(--green); }
+    button.secondary { background: #fff; color: var(--ink); border-color: var(--line); }
+    #products { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+    .product { padding: 22px; background: white; min-height: 164px; }
+    .product h2 { margin: 0 0 14px; font-size: 20px; font-weight: 400; }
+    .product p { margin: 0 0 16px; color: #59635d; font: 14px Arial, sans-serif; }
+    section { margin-top: 32px; padding-top: 22px; border-top: 1px solid var(--line); }
+    section h2 { font-size: 22px; font-weight: 400; }
+    #message { min-height: 24px; color: var(--green); font: 14px Arial, sans-serif; }
+    @media (max-width: 600px) { header { align-items: flex-start; gap: 14px; flex-direction: column; } header nav { gap: 12px; flex-wrap: wrap; } h1 { font-size: 32px; } }
+  </style>
+</head>
+<body>
+  <header>
+    <strong>FIELD SUPPLY</strong>
+    <nav aria-label="Account and shopping">
+      <span id="account">Signed out</span>
+      <a href="#cart">Cart</a>
+      <a href="#orders">Orders</a>
+      <a href="#profile">Profile</a>
+    </nav>
+  </header>
+  <main>
+    <h1>Useful things, made to last.</h1>
+    <p class="intro">A small selection for workdays and weekends.</p>
+    <div class="tools">
+      <input id="search" aria-label="Search products" placeholder="Search products">
+      <button id="search-submit" class="secondary">Search</button>
+    </div>
+    <div id="products" aria-live="polite"></div>
+    <section id="cart"><h2>Your cart</h2><div id="cart-content">Sign in to view your cart.</div></section>
+    <section id="checkout"><h2>Checkout</h2>
+      <input id="coupon" aria-label="Coupon code" placeholder="Coupon code">
+      <button data-testid="checkout-submit">Place order</button>
+    </section>
+    <section id="orders"><h2>Orders</h2><div id="orders-content">Sign in to view orders.</div></section>
+    <section id="profile"><h2>Profile</h2>
+      <input id="username" aria-label="Username" placeholder="Username" value="demo">
+      <input id="password" aria-label="Password" placeholder="Password" type="password" value="demo-password">
+      <button id="login">Sign in</button>
+      <button id="logout" class="secondary">Sign out</button>
+      <div id="profile-content"></div>
+    </section>
+    <p id="message" role="status"></p>
+  </main>
+  <script>
+    let token = null;
+    let cartTotal = 0;
+    const productsNode = document.querySelector('#products');
+    const messageNode = document.querySelector('#message');
+    const money = cents => '$' + (cents / 100).toFixed(2);
+
+    async function loadProducts(query = '') {
+      const response = await fetch('/api/products?q=' + encodeURIComponent(query));
+      const products = await response.json();
+      productsNode.innerHTML = products.map(product => `
+        <article class="product">
+          <h2>${product.name}</h2><p>${money(product.price_cents)}</p>
+          <button data-add="${product.product_id}">Add to cart</button>
+        </article>`).join('');
+      productsNode.querySelectorAll('[data-add]').forEach(button => button.addEventListener('click', () => addItem(button.dataset.add)));
+    }
+
+    async function addItem(productId) {
+      if (!token) { messageNode.textContent = 'Sign in before adding items.'; return; }
+      const response = await fetch('/api/cart/items', {
+        method: 'POST', headers: { 'Content-Type': 'application/json', Authorization: 'Bearer ' + token },
+        body: JSON.stringify({ product_id: productId, quantity: 1 })
+      });
+      const item = await response.json(); cartTotal += item.line_total_cents;
+      document.querySelector('#cart-content').textContent = money(cartTotal);
+      messageNode.textContent = item.name + ' added.';
+    }
+
+    async function loadAccount() {
+      if (!token) return;
+      const headers = { Authorization: 'Bearer ' + token };
+      const [profileResponse, ordersResponse, cartResponse] = await Promise.all([
+        fetch('/api/profile', { headers }), fetch('/api/orders', { headers }), fetch('/api/cart', { headers })
+      ]);
+      const profile = await profileResponse.json(); const orders = await ordersResponse.json();
+      const cart = await cartResponse.json(); cartTotal = cart.total_cents;
+      document.querySelector('#account').textContent = profile.user_id;
+      document.querySelector('#profile-content').textContent = 'Signed in as ' + profile.user_id;
+      document.querySelector('#orders-content').textContent = orders.length + ' order(s)';
+      document.querySelector('#cart-content').textContent = money(cartTotal);
+    }
+
+    document.querySelector('#search-submit').addEventListener('click', () => loadProducts(document.querySelector('#search').value));
+    document.querySelector('#search').addEventListener('keydown', event => { if (event.key === 'Enter') loadProducts(event.target.value); });
+    document.querySelector('#login').addEventListener('click', async () => {
+      const response = await fetch('/api/login', { method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username: document.querySelector('#username').value, password: document.querySelector('#password').value }) });
+      const result = await response.json();
+      if (!response.ok) { messageNode.textContent = result.detail; return; }
+      token = result.access_token; await loadAccount(); messageNode.textContent = 'Signed in.';
+    });
+    document.querySelector('#logout').addEventListener('click', () => {
+      token = null; cartTotal = 0; document.querySelector('#account').textContent = 'Signed out';
+      document.querySelector('#cart-content').textContent = 'Sign in to view your cart.';
+      document.querySelector('#orders-content').textContent = 'Sign in to view orders.';
+      document.querySelector('#profile-content').textContent = '';
+    });
+    document.querySelector('[data-testid="checkout-submit"]').addEventListener('click', async () => {
+      if (!token) { messageNode.textContent = 'Sign in before checkout.'; return; }
+      const response = await fetch('/api/checkout', { method: 'POST', headers: { 'Content-Type': 'application/json', Authorization: 'Bearer ' + token },
+        body: JSON.stringify({ cart_total_cents: cartTotal, coupon_code: document.querySelector('#coupon').value || null }) });
+      const result = await response.json();
+      if (!response.ok) { messageNode.textContent = result.detail; return; }
+      messageNode.textContent = 'Order ' + result.order_id + ' placed for ' + money(result.total_cents) + '.';
+      await loadAccount();
+    });
+    loadProducts();
+  </script>
+</body>
+</html>

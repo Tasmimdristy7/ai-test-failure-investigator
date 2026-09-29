@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ai-test-failure-investigator"
+version = "0.1.0"
+description = "A deliberately buggy e-commerce testbed and deterministic failure investigator."
+requires-python = ">=3.9"
+dependencies = [
+    "fastapi>=0.110,<1",
+    "scikit-learn>=1.3,<1.7",
+    "uvicorn[standard]>=0.27,<1",
+]
+
+[project.optional-dependencies]
+dev = [
+    "httpx>=0.27,<1",
+    "pytest>=8,<9",
+    "pytest-playwright>=0.7,<1",
+]
+dashboard = [
+    "plotly>=5.20,<7",
+    "streamlit>=1.49,<2",
+]
+
+[tool.setuptools.packages.find]
+include = ["app*", "investigator*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-p investigator.pytest_plugin"
+markers = [
+    "failure_context(endpoint, status, bug_id): metadata for intentional defect failures",
+    "api: API contract and endpoint tests",
+    "integration: multi-endpoint workflow tests",
+    "ui: browser-driven Playwright tests",
+    "injected_defect(bug_id): expected failing scenario for a deliberate defect",
+]

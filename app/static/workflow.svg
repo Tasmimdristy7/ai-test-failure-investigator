@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="820" viewBox="0 0 1200 820" role="img" aria-labelledby="title desc">
+<title id="title">AI Test Failure Investigator — complete workflow</title>
+<desc id="desc">Follow the arrows from the e-commerce application through automated tests, failure capture, normalization, similarity comparison, clustering, dashboard review, and a manual engineer investigation and rerun.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#75897e"/></marker></defs>
+<rect width="1200" height="820" rx="20" fill="#edf1eb"/>
+<g font-family="Arial, Helvetica, sans-serif"><text x="30" y="38" font-size="13" font-weight="700" letter-spacing="2" fill="#52675a">PROJECT WORKFLOW</text><text x="30" y="66" font-size="19" fill="#18251e">From reproducible defects to evidence an engineer can act on</text>
+<g fill="none" stroke="#75897e" stroke-width="2.5" marker-end="url(#arrow)">
+<path d="M370 173 H418"/><path d="M770 173 H818"/><path d="M1000 256 V298"/>
+<path d="M830 393 H782"/><path d="M430 393 H382"/><path d="M200 476 V518"/>
+<path d="M370 613 H418"/><path d="M770 613 H818"/>
+<path d="M1000 696 V756 H15 V173 H26" stroke-dasharray="6 6"/>
+</g>
+<g><rect x="30" y="90" width="340" height="166" rx="12" fill="white" stroke="#ced8ce"/><rect x="30" y="90" width="340" height="5" rx="2" fill="#177e89"/><rect x="48" y="110" width="32" height="28" rx="7" fill="#177e89"/><text x="64" y="129" text-anchor="middle" font-size="13" font-weight="700" fill="white">01</text><text x="90" y="130" font-size="18" font-weight="700" fill="#18251e">E-commerce testbed</text>
+<text x="48" y="168" font-size="14" fill="#526158">FastAPI storefront + API</text>
+<text x="48" y="193" font-size="14" fill="#526158">Login · products · cart · checkout</text>
+<text x="48" y="218" font-size="14" fill="#526158">Orders · profile · 9 active defects</text>
+</g>
+<g><rect x="430" y="90" width="340" height="166" rx="12" fill="white" stroke="#ced8ce"/><rect x="430" y="90" width="340" height="5" rx="2" fill="#177e89"/><rect x="448" y="110" width="32" height="28" rx="7" fill="#177e89"/><text x="464" y="129" text-anchor="middle" font-size="13" font-weight="700" fill="white">02</text><text x="490" y="130" font-size="18" font-weight="700" fill="#18251e">Execute test suites</text>
+<text x="448" y="168" font-size="14" fill="#526158">Pytest: baseline, API, integration</text>
+<text x="448" y="193" font-size="14" fill="#526158">Phase 1 scenarios + Playwright UI</text>
+<text x="448" y="218" font-size="14" fill="#526158">Run locally or in GitHub Actions</text>
+</g>
+<g><rect x="830" y="90" width="340" height="166" rx="12" fill="white" stroke="#ced8ce"/><rect x="830" y="90" width="340" height="5" rx="2" fill="#bf4e30"/><rect x="848" y="110" width="32" height="28" rx="7" fill="#bf4e30"/><text x="864" y="129" text-anchor="middle" font-size="13" font-weight="700" fill="white">03</text><text x="890" y="130" font-size="18" font-weight="700" fill="#18251e">Separate test outcomes</text>
+<text x="848" y="168" font-size="14" fill="#526158">Passed tests contribute to run totals</text>
+<text x="848" y="193" font-size="14" fill="#526158">Failed tests enter the investigator</text>
+<text x="848" y="218" font-size="14" fill="#526158">Baseline expectation: 22 pass / 28 fail</text>
+</g>
+<g><rect x="830" y="310" width="340" height="166" rx="12" fill="white" stroke="#ced8ce"/><rect x="830" y="310" width="340" height="5" rx="2" fill="#bf4e30"/><rect x="848" y="330" width="32" height="28" rx="7" fill="#bf4e30"/><text x="864" y="349" text-anchor="middle" font-size="13" font-weight="700" fill="white">04</text><text x="890" y="350" font-size="18" font-weight="700" fill="#18251e">Capture failure evidence</text>
+<text x="848" y="388" font-size="14" fill="#526158">JSON: test, error, trace, endpoint</text>
+<text x="848" y="413" font-size="14" fill="#526158">HTTP status, duration, commit, retry</text>
+<text x="848" y="438" font-size="14" fill="#526158">UI failures: screenshot + browser trace</text>
+</g>
+<g><rect x="430" y="310" width="340" height="166" rx="12" fill="white" stroke="#ced8ce"/><rect x="430" y="310" width="340" height="5" rx="2" fill="#6457a6"/><rect x="448" y="330" width="32" height="28" rx="7" fill="#6457a6"/><text x="464" y="349" text-anchor="middle" font-size="13" font-weight="700" fill="white">05</text><text x="490" y="350" font-size="18" font-weight="700" fill="#18251e">Normalize + fingerprint</text>
+<text x="448" y="388" font-size="14" fill="#526158">Remove changing timestamps and IDs</text>
+<text x="448" y="413" font-size="14" fill="#526158">Keep stable error and context features</text>
+<text x="448" y="438" font-size="14" fill="#526158">Build a repeatable failure signature</text>
+</g>
+<g><rect x="30" y="310" width="340" height="166" rx="12" fill="white" stroke="#ced8ce"/><rect x="30" y="310" width="340" height="5" rx="2" fill="#6457a6"/><rect x="48" y="330" width="32" height="28" rx="7" fill="#6457a6"/><text x="64" y="349" text-anchor="middle" font-size="13" font-weight="700" fill="white">06</text><text x="90" y="350" font-size="18" font-weight="700" fill="#18251e">Compare similar failures</text>
+<text x="48" y="388" font-size="14" fill="#526158">TF-IDF + cosine text similarity</text>
+<text x="48" y="413" font-size="14" fill="#526158">Match service, endpoint, HTTP status</text>
+<text x="48" y="438" font-size="14" fill="#526158">Exact fingerprints stay grouped</text>
+</g>
+<g><rect x="30" y="530" width="340" height="166" rx="12" fill="white" stroke="#ced8ce"/><rect x="30" y="530" width="340" height="5" rx="2" fill="#367c54"/><rect x="48" y="550" width="32" height="28" rx="7" fill="#367c54"/><text x="64" y="569" text-anchor="middle" font-size="13" font-weight="700" fill="white">07</text><text x="90" y="570" font-size="18" font-weight="700" fill="#18251e">Group likely causes</text>
+<text x="48" y="608" font-size="14" fill="#526158">Join related failures into clusters</text>
+<text x="48" y="633" font-size="14" fill="#526158">Baseline expectation: groups of 15 / 8 / 5</text>
+<text x="48" y="658" font-size="14" fill="#526158">Groups guide investigation, not proof</text>
+</g>
+<g><rect x="430" y="530" width="340" height="166" rx="12" fill="white" stroke="#ced8ce"/><rect x="430" y="530" width="340" height="5" rx="2" fill="#367c54"/><rect x="448" y="550" width="32" height="28" rx="7" fill="#367c54"/><text x="464" y="569" text-anchor="middle" font-size="13" font-weight="700" fill="white">08</text><text x="490" y="570" font-size="18" font-weight="700" fill="#18251e">Explore this dashboard</text>
+<text x="448" y="608" font-size="14" fill="#526158">Load a saved report or upload JSON</text>
+<text x="448" y="633" font-size="14" fill="#526158">Review counts, clusters, and pair scores</text>
+<text x="448" y="658" font-size="14" fill="#526158">Inspect errors, traces, and affected tests</text>
+</g>
+<g><rect x="830" y="530" width="340" height="166" rx="12" fill="white" stroke="#ced8ce"/><rect x="830" y="530" width="340" height="5" rx="2" fill="#367c54"/><rect x="848" y="550" width="32" height="28" rx="7" fill="#367c54"/><text x="864" y="569" text-anchor="middle" font-size="13" font-weight="700" fill="white">09</text><text x="890" y="570" font-size="18" font-weight="700" fill="#18251e">Engineer investigates</text>
+<text x="848" y="608" font-size="14" fill="#526158">Prioritize the largest failure groups</text>
+<text x="848" y="633" font-size="14" fill="#526158">Confirm the cause using evidence</text>
+<text x="848" y="658" font-size="14" fill="#526158">Fix the application and rerun tests</text>
+</g>
+<rect x="350" y="739" width="490" height="32" rx="16" fill="#edf1eb"/><text x="595" y="760" text-anchor="middle" font-size="14" fill="#52675a">Manual feedback loop · investigate → fix → rerun</text><text x="30" y="798" font-size="12" fill="#52675a">Deterministic analysis · No automatic repairs · Persistent run history and PostgreSQL are planned</text></g></svg>
