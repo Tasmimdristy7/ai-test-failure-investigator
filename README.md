@@ -53,6 +53,12 @@ python -m pip install -e ".[dashboard]"
 streamlit run app/dashboard.py
 ```
 
+To deploy on Streamlit Community Cloud, connect this GitHub repository, select
+the `main` branch, and set the main file path to `app/dashboard.py`. Choose Python
+3.11 in advanced settings. The root `requirements.txt` installs the project with
+dashboard and test dependencies. The committed `artifacts/failures.json` provides
+sample results immediately; **Run 50-test demo** generates a fresh report.
+
 The dashboard opens with a plain-language project overview, the application/investigator/outcome story, and an expandable guide to test coverage, architecture, implemented capabilities, and planned work. Selected-run results are distinguished from expected benchmark counts, and clusters are presented as likely causes for investigation.
 
 The dashboard reads saved JSON reports from `artifacts/`. Click **Run 50-test demo** in the main panel to execute the actual pytest benchmark. The retained workflow walkthrough reports each step with its measured result: execute tests, capture the structured artifact, normalize failures into fingerprints, compare candidate pairs with TF-IDF/cosine, then group root causes. It verifies the benchmark result of 50 tests, 28 failures, and three clusters. The five-stage walkthrough is saved into `artifacts/failures.json`, so it remains visible after a page refresh or in a new dashboard session. The evidence view shows a raw-to-normalized example, the resulting fingerprint, actual cosine scores for representative failure pairs, and per-test details. The clusterer uses a default 0.35 cosine-similarity threshold and only joins failures that share service, endpoint, and HTTP status. Adjust the threshold in the sidebar to explore broader or narrower groupings. Exact fingerprints remain grouped.

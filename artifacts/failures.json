@@ -1,0 +1,788 @@
+{
+  "run_id": "local",
+  "timestamp": "2026-10-05T17:32:14.184166+00:00",
+  "commit": "local",
+  "test_count": 50,
+  "exit_status": 1,
+  "failure_count": 28,
+  "failures": [
+    {
+      "test_name": "tests/test_milestone.py::test_checkout_rejects_broken_coupon[0]",
+      "suite": "test_milestone",
+      "timestamp": "2026-10-05T17:32:13.917513+00:00",
+      "error_message": "tests/test_milestone.py:16: AssertionError",
+      "stack_trace": "case = 0\n\n    @pytest.mark.parametrize(\"case\", range(15))\n    @pytest.mark.failure_context(endpoint=\"/api/checkout\", status=500, bug_id=\"BUG-01\")\n    def test_checkout_rejects_broken_coupon(case: int) -> None:\n        response = client.post(\"/api/checkout\", json={\"coupon_code\": f\"BUG-01-{case}\"})\n>       assert response.status_code == 200, f\"expected HTTP 200, received {response.status_code} for POST /api/checkout\"\nE       AssertionError: expected HTTP 200, received 500 for POST /api/checkout\nE       assert 500 == 200\nE        +  where 500 = <Response [500 Internal Server Error]>.status_code\n\ntests/test_milestone.py:16: AssertionError",
+      "http_status": 500,
+      "endpoint": "/api/checkout",
+      "bug_id": "BUG-01",
+      "browser": null,
+      "retry": 0,
+      "duration": 0.008053209001445794,
+      "commit": "local",
+      "screenshot": null,
+      "trace": null,
+      "network_errors": []
+    },
+    {
+      "test_name": "tests/test_milestone.py::test_checkout_rejects_broken_coupon[1]",
+      "suite": "test_milestone",
+      "timestamp": "2026-10-05T17:32:13.923254+00:00",
+      "error_message": "tests/test_milestone.py:16: AssertionError",
+      "stack_trace": "case = 1\n\n    @pytest.mark.parametrize(\"case\", range(15))\n    @pytest.mark.failure_context(endpoint=\"/api/checkout\", status=500, bug_id=\"BUG-01\")\n    def test_checkout_rejects_broken_coupon(case: int) -> None:\n        response = client.post(\"/api/checkout\", json={\"coupon_code\": f\"BUG-01-{case}\"})\n>       assert response.status_code == 200, f\"expected HTTP 200, received {response.status_code} for POST /api/checkout\"\nE       AssertionError: expected HTTP 200, received 500 for POST /api/checkout\nE       assert 500 == 200\nE        +  where 500 = <Response [500 Internal Server Error]>.status_code\n\ntests/test_milestone.py:16: AssertionError",
+      "http_status": 500,
+      "endpoint": "/api/checkout",
+      "bug_id": "BUG-01",
+      "browser": null,
+      "retry": 0,
+      "duration": 0.002171500000258675,
+      "commit": "local",
+      "screenshot": null,
+      "trace": null,
+      "network_errors": []
+    },
+    {
+      "test_name": "tests/test_milestone.py::test_checkout_rejects_broken_coupon[2]",
+      "suite": "test_milestone",
+      "timestamp": "2026-10-05T17:32:13.928550+00:00",
+      "error_message": "tests/test_milestone.py:16: AssertionError",
+      "stack_trace": "case = 2\n\n    @pytest.mark.parametrize(\"case\", range(15))\n    @pytest.mark.failure_context(endpoint=\"/api/checkout\", status=500, bug_id=\"BUG-01\")\n    def test_checkout_rejects_broken_coupon(case: int) -> None:\n        response = client.post(\"/api/checkout\", json={\"coupon_code\": f\"BUG-01-{case}\"})\n>       assert response.status_code == 200, f\"expected HTTP 200, received {response.status_code} for POST /api/checkout\"\nE       AssertionError: expected HTTP 200, received 500 for POST /api/checkout\nE       assert 500 == 200\nE        +  where 500 = <Response [500 Internal Server Error]>.status_code\n\ntests/test_milestone.py:16: AssertionError",
+      "http_status": 500,
+      "endpoint": "/api/checkout",
+      "bug_id": "BUG-01",
+      "browser": null,
+      "retry": 0,
+      "duration": 0.0022124579991213977,
+      "commit": "local",
+      "screenshot": null,
+      "trace": null,
+      "network_errors": []
+    },
+    {
+      "test_name": "tests/test_milestone.py::test_checkout_rejects_broken_coupon[3]",
+      "suite": "test_milestone",
+      "timestamp": "2026-10-05T17:32:13.934273+00:00",
+      "error_message": "tests/test_milestone.py:16: AssertionError",
+      "stack_trace": "case = 3\n\n    @pytest.mark.parametrize(\"case\", range(15))\n    @pytest.mark.failure_context(endpoint=\"/api/checkout\", status=500, bug_id=\"BUG-01\")\n    def test_checkout_rejects_broken_coupon(case: int) -> None:\n        response = client.post(\"/api/checkout\", json={\"coupon_code\": f\"BUG-01-{case}\"})\n>       assert response.status_code == 200, f\"expected HTTP 200, received {response.status_code} for POST /api/checkout\"\nE       AssertionError: expected HTTP 200, received 500 for POST /api/checkout\nE       assert 500 == 200\nE        +  where 500 = <Response [500 Internal Server Error]>.status_code\n\ntests/test_milestone.py:16: AssertionError",
+      "http_status": 500,
+      "endpoint": "/api/checkout",
+      "bug_id": "BUG-01",
+      "browser": null,
+      "retry": 0,
+      "duration": 0.002562040999691817,
+      "commit": "local",
+      "screenshot": null,
+      "trace": null,
+      "network_errors": []
+    },
+    {
+      "test_name": "tests/test_milestone.py::test_checkout_rejects_broken_coupon[4]",
+      "suite": "test_milestone",
+      "timestamp": "2026-10-05T17:32:13.940214+00:00",
+      "error_message": "tests/test_milestone.py:16: AssertionError",
+      "stack_trace": "case = 4\n\n    @pytest.mark.parametrize(\"case\", range(15))\n    @pytest.mark.failure_context(endpoint=\"/api/checkout\", status=500, bug_id=\"BUG-01\")\n    def test_checkout_rejects_broken_coupon(case: int) -> None:\n        response = client.post(\"/api/checkout\", json={\"coupon_code\": f\"BUG-01-{case}\"})\n>       assert response.status_code == 200, f\"expected HTTP 200, received {response.status_code} for POST /api/checkout\"\nE       AssertionError: expected HTTP 200, received 500 for POST /api/checkout\nE       assert 500 == 200\nE        +  where 500 = <Response [500 Internal Server Error]>.status_code\n\ntests/test_milestone.py:16: AssertionError",
+      "http_status": 500,
+      "endpoint": "/api/checkout",
+      "bug_id": "BUG-01",
+      "browser": null,
+      "retry": 0,
+      "duration": 0.0021000830001867143,
+      "commit": "local",
+      "screenshot": null,
+      "trace": null,
+      "network_errors": []
+    },
+    {
+      "test_name": "tests/test_milestone.py::test_checkout_rejects_broken_coupon[5]",
+      "suite": "test_milestone",
+      "timestamp": "2026-10-05T17:32:13.945645+00:00",
+      "error_message": "tests/test_milestone.py:16: AssertionError",
+      "stack_trace": "case = 5\n\n    @pytest.mark.parametrize(\"case\", range(15))\n    @pytest.mark.failure_context(endpoint=\"/api/checkout\", status=500, bug_id=\"BUG-01\")\n    def test_checkout_rejects_broken_coupon(case: int) -> None:\n        response = client.post(\"/api/checkout\", json={\"coupon_code\": f\"BUG-01-{case}\"})\n>       assert response.status_code == 200, f\"expected HTTP 200, received {response.status_code} for POST /api/checkout\"\nE       AssertionError: expected HTTP 200, received 500 for POST /api/checkout\nE       assert 500 == 200\nE        +  where 500 = <Response [500 Internal Server Error]>.status_code\n\ntests/test_milestone.py:16: AssertionError",
+      "http_status": 500,
+      "endpoint": "/api/checkout",
+      "bug_id": "BUG-01",
+      "browser": null,
+      "retry": 0,
+      "duration": 0.0021863750007469207,
+      "commit": "local",
+      "screenshot": null,
+      "trace": null,
+      "network_errors": []
+    },
+    {
+      "test_name": "tests/test_milestone.py::test_checkout_rejects_broken_coupon[6]",
+      "suite": "test_milestone",
+      "timestamp": "2026-10-05T17:32:13.951918+00:00",
+      "error_message": "tests/test_milestone.py:16: AssertionError",
+      "stack_trace": "case = 6\n\n    @pytest.mark.parametrize(\"case\", range(15))\n    @pytest.mark.failure_context(endpoint=\"/api/checkout\", status=500, bug_id=\"BUG-01\")\n    def test_checkout_rejects_broken_coupon(case: int) -> None:\n        response = client.post(\"/api/checkout\", json={\"coupon_code\": f\"BUG-01-{case}\"})\n>       assert response.status_code == 200, f\"expected HTTP 200, received {response.status_code} for POST /api/checkout\"\nE       AssertionError: expected HTTP 200, received 500 for POST /api/checkout\nE       assert 500 == 200\nE        +  where 500 = <Response [500 Internal Server Error]>.status_code\n\ntests/test_milestone.py:16: AssertionError",
+      "http_status": 500,
+      "endpoint": "/api/checkout",
+      "bug_id": "BUG-01",
+      "browser": null,
+      "retry": 0,
+      "duration": 0.0026931669999612495,
+      "commit": "local",
+      "screenshot": null,
+      "trace": null,
+      "network_errors": []
+    },
+    {
+      "test_name": "tests/test_milestone.py::test_checkout_rejects_broken_coupon[7]",
+      "suite": "test_milestone",
+      "timestamp": "2026-10-05T17:32:13.958236+00:00",
+      "error_message": "tests/test_milestone.py:16: AssertionError",
+      "stack_trace": "case = 7\n\n    @pytest.mark.parametrize(\"case\", range(15))\n    @pytest.mark.failure_context(endpoint=\"/api/checkout\", status=500, bug_id=\"BUG-01\")\n    def test_checkout_rejects_broken_coupon(case: int) -> None:\n        response = client.post(\"/api/checkout\", json={\"coupon_code\": f\"BUG-01-{case}\"})\n>       assert response.status_code == 200, f\"expected HTTP 200, received {response.status_code} for POST /api/checkout\"\nE       AssertionError: expected HTTP 200, received 500 for POST /api/checkout\nE       assert 500 == 200\nE        +  where 500 = <Response [500 Internal Server Error]>.status_code\n\ntests/test_milestone.py:16: AssertionError",
+      "http_status": 500,
+      "endpoint": "/api/checkout",
+      "bug_id": "BUG-01",
+      "browser": null,
+      "retry": 0,
+      "duration": 0.002882417000364512,
+      "commit": "local",
+      "screenshot": null,
+      "trace": null,
+      "network_errors": []
+    },
+    {
+      "test_name": "tests/test_milestone.py::test_checkout_rejects_broken_coupon[8]",
+      "suite": "test_milestone",
+      "timestamp": "2026-10-05T17:32:13.965062+00:00",
+      "error_message": "tests/test_milestone.py:16: AssertionError",
+      "stack_trace": "case = 8\n\n    @pytest.mark.parametrize(\"case\", range(15))\n    @pytest.mark.failure_context(endpoint=\"/api/checkout\", status=500, bug_id=\"BUG-01\")\n    def test_checkout_rejects_broken_coupon(case: int) -> None:\n        response = client.post(\"/api/checkout\", json={\"coupon_code\": f\"BUG-01-{case}\"})\n>       assert response.status_code == 200, f\"expected HTTP 200, received {response.status_code} for POST /api/checkout\"\nE       AssertionError: expected HTTP 200, received 500 for POST /api/checkout\nE       assert 500 == 200\nE        +  where 500 = <Response [500 Internal Server Error]>.status_code\n\ntests/test_milestone.py:16: AssertionError",
+      "http_status": 500,
+      "endpoint": "/api/checkout",
+      "bug_id": "BUG-01",
+      "browser": null,
+      "retry": 0,
+      "duration": 0.003192957999999635,
+      "commit": "local",
+      "screenshot": null,
+      "trace": null,
+      "network_errors": []
+    },
+    {
+      "test_name": "tests/test_milestone.py::test_checkout_rejects_broken_coupon[9]",
+      "suite": "test_milestone",
+      "timestamp": "2026-10-05T17:32:13.971710+00:00",
+      "error_message": "tests/test_milestone.py:16: AssertionError",
+      "stack_trace": "case = 9\n\n    @pytest.mark.parametrize(\"case\", range(15))\n    @pytest.mark.failure_context(endpoint=\"/api/checkout\", status=500, bug_id=\"BUG-01\")\n    def test_checkout_rejects_broken_coupon(case: int) -> None:\n        response = client.post(\"/api/checkout\", json={\"coupon_code\": f\"BUG-01-{case}\"})\n>       assert response.status_code == 200, f\"expected HTTP 200, received {response.status_code} for POST /api/checkout\"\nE       AssertionError: expected HTTP 200, received 500 for POST /api/checkout\nE       assert 500 == 200\nE        +  where 500 = <Response [500 Internal Server Error]>.status_code\n\ntests/test_milestone.py:16: AssertionError",
+      "http_status": 500,
+      "endpoint": "/api/checkout",
+      "bug_id": "BUG-01",
+      "browser": null,
+      "retry": 0,
+      "duration": 0.0027237909998802934,
+      "commit": "local",
+      "screenshot": null,
+      "trace": null,
+      "network_errors": []
+    },
+    {
+      "test_name": "tests/test_milestone.py::test_checkout_rejects_broken_coupon[10]",
+      "suite": "test_milestone",
+      "timestamp": "2026-10-05T17:32:13.977470+00:00",
+      "error_message": "tests/test_milestone.py:16: AssertionError",
+      "stack_trace": "case = 10\n\n    @pytest.mark.parametrize(\"case\", range(15))\n    @pytest.mark.failure_context(endpoint=\"/api/checkout\", status=500, bug_id=\"BUG-01\")\n    def test_checkout_rejects_broken_coupon(case: int) -> None:\n        response = client.post(\"/api/checkout\", json={\"coupon_code\": f\"BUG-01-{case}\"})\n>       assert response.status_code == 200, f\"expected HTTP 200, received {response.status_code} for POST /api/checkout\"\nE       AssertionError: expected HTTP 200, received 500 for POST /api/checkout\nE       assert 500 == 200\nE        +  where 500 = <Response [500 Internal Server Error]>.status_code\n\ntests/test_milestone.py:16: AssertionError",
+      "http_status": 500,
+      "endpoint": "/api/checkout",
+      "bug_id": "BUG-01",
+      "browser": null,
+      "retry": 0,
+      "duration": 0.0025378340014867717,
+      "commit": "local",
+      "screenshot": null,
+      "trace": null,
+      "network_errors": []
+    },
+    {
+      "test_name": "tests/test_milestone.py::test_checkout_rejects_broken_coupon[11]",
+      "suite": "test_milestone",
+      "timestamp": "2026-10-05T17:32:13.983463+00:00",
+      "error_message": "tests/test_milestone.py:16: AssertionError",
+      "stack_trace": "case = 11\n\n    @pytest.mark.parametrize(\"case\", range(15))\n    @pytest.mark.failure_context(endpoint=\"/api/checkout\", status=500, bug_id=\"BUG-01\")\n    def test_checkout_rejects_broken_coupon(case: int) -> None:\n        response = client.post(\"/api/checkout\", json={\"coupon_code\": f\"BUG-01-{case}\"})\n>       assert response.status_code == 200, f\"expected HTTP 200, received {response.status_code} for POST /api/checkout\"\nE       AssertionError: expected HTTP 200, received 500 for POST /api/checkout\nE       assert 500 == 200\nE        +  where 500 = <Response [500 Internal Server Error]>.status_code\n\ntests/test_milestone.py:16: AssertionError",
+      "http_status": 500,
+      "endpoint": "/api/checkout",
+      "bug_id": "BUG-01",
+      "browser": null,
+      "retry": 0,
+      "duration": 0.0023977499986358453,
+      "commit": "local",
+      "screenshot": null,
+      "trace": null,
+      "network_errors": []
+    },
+    {
+      "test_name": "tests/test_milestone.py::test_checkout_rejects_broken_coupon[12]",
+      "suite": "test_milestone",
+      "timestamp": "2026-10-05T17:32:13.990923+00:00",
+      "error_message": "tests/test_milestone.py:16: AssertionError",
+      "stack_trace": "case = 12\n\n    @pytest.mark.parametrize(\"case\", range(15))\n    @pytest.mark.failure_context(endpoint=\"/api/checkout\", status=500, bug_id=\"BUG-01\")\n    def test_checkout_rejects_broken_coupon(case: int) -> None:\n        response = client.post(\"/api/checkout\", json={\"coupon_code\": f\"BUG-01-{case}\"})\n>       assert response.status_code == 200, f\"expected HTTP 200, received {response.status_code} for POST /api/checkout\"\nE       AssertionError: expected HTTP 200, received 500 for POST /api/checkout\nE       assert 500 == 200\nE        +  where 500 = <Response [500 Internal Server Error]>.status_code\n\ntests/test_milestone.py:16: AssertionError",
+      "http_status": 500,
+      "endpoint": "/api/checkout",
+      "bug_id": "BUG-01",
+      "browser": null,
+      "retry": 0,
+      "duration": 0.0032664580012351507,
+      "commit": "local",
+      "screenshot": null,
+      "trace": null,
+      "network_errors": []
+    },
+    {
+      "test_name": "tests/test_milestone.py::test_checkout_rejects_broken_coupon[13]",
+      "suite": "test_milestone",
+      "timestamp": "2026-10-05T17:32:13.997021+00:00",
+      "error_message": "tests/test_milestone.py:16: AssertionError",
+      "stack_trace": "case = 13\n\n    @pytest.mark.parametrize(\"case\", range(15))\n    @pytest.mark.failure_context(endpoint=\"/api/checkout\", status=500, bug_id=\"BUG-01\")\n    def test_checkout_rejects_broken_coupon(case: int) -> None:\n        response = client.post(\"/api/checkout\", json={\"coupon_code\": f\"BUG-01-{case}\"})\n>       assert response.status_code == 200, f\"expected HTTP 200, received {response.status_code} for POST /api/checkout\"\nE       AssertionError: expected HTTP 200, received 500 for POST /api/checkout\nE       assert 500 == 200\nE        +  where 500 = <Response [500 Internal Server Error]>.status_code\n\ntests/test_milestone.py:16: AssertionError",
+      "http_status": 500,
+      "endpoint": "/api/checkout",
+      "bug_id": "BUG-01",
+      "browser": null,
+      "retry": 0,
+      "duration": 0.002507458000764018,
+      "commit": "local",
+      "screenshot": null,
+      "trace": null,
+      "network_errors": []
+    },
+    {
+      "test_name": "tests/test_milestone.py::test_checkout_rejects_broken_coupon[14]",
+      "suite": "test_milestone",
+      "timestamp": "2026-10-05T17:32:14.010279+00:00",
+      "error_message": "tests/test_milestone.py:16: AssertionError",
+      "stack_trace": "case = 14\n\n    @pytest.mark.parametrize(\"case\", range(15))\n    @pytest.mark.failure_context(endpoint=\"/api/checkout\", status=500, bug_id=\"BUG-01\")\n    def test_checkout_rejects_broken_coupon(case: int) -> None:\n        response = client.post(\"/api/checkout\", json={\"coupon_code\": f\"BUG-01-{case}\"})\n>       assert response.status_code == 200, f\"expected HTTP 200, received {response.status_code} for POST /api/checkout\"\nE       AssertionError: expected HTTP 200, received 500 for POST /api/checkout\nE       assert 500 == 200\nE        +  where 500 = <Response [500 Internal Server Error]>.status_code\n\ntests/test_milestone.py:16: AssertionError",
+      "http_status": 500,
+      "endpoint": "/api/checkout",
+      "bug_id": "BUG-01",
+      "browser": null,
+      "retry": 0,
+      "duration": 0.006306291999862879,
+      "commit": "local",
+      "screenshot": null,
+      "trace": null,
+      "network_errors": []
+    },
+    {
+      "test_name": "tests/test_milestone.py::test_expired_auth_token_is_rejected[0]",
+      "suite": "test_milestone",
+      "timestamp": "2026-10-05T17:32:14.021200+00:00",
+      "error_message": "tests/test_milestone.py:23: AssertionError",
+      "stack_trace": "case = 0\n\n    @pytest.mark.parametrize(\"case\", range(8))\n    @pytest.mark.failure_context(endpoint=\"/api/profile\", status=200, bug_id=\"BUG-02\")\n    def test_expired_auth_token_is_rejected(case: int) -> None:\n        response = client.get(\"/api/profile\", headers={\"Authorization\": f\"Bearer expired-user-{case}\"})\n>       assert response.status_code == 401, f\"expected HTTP 401, received {response.status_code} for GET /api/profile\"\nE       AssertionError: expected HTTP 401, received 200 for GET /api/profile\nE       assert 200 == 401\nE        +  where 200 = <Response [200 OK]>.status_code\n\ntests/test_milestone.py:23: AssertionError",
+      "http_status": 200,
+      "endpoint": "/api/profile",
+      "bug_id": "BUG-02",
+      "browser": null,
+      "retry": 0,
+      "duration": 0.007440374998623156,
+      "commit": "local",
+      "screenshot": null,
+      "trace": null,
+      "network_errors": []
+    },
+    {
+      "test_name": "tests/test_milestone.py::test_expired_auth_token_is_rejected[1]",
+      "suite": "test_milestone",
+      "timestamp": "2026-10-05T17:32:14.053648+00:00",
+      "error_message": "tests/test_milestone.py:23: AssertionError",
+      "stack_trace": "case = 1\n\n    @pytest.mark.parametrize(\"case\", range(8))\n    @pytest.mark.failure_context(endpoint=\"/api/profile\", status=200, bug_id=\"BUG-02\")\n    def test_expired_auth_token_is_rejected(case: int) -> None:\n        response = client.get(\"/api/profile\", headers={\"Authorization\": f\"Bearer expired-user-{case}\"})\n>       assert response.status_code == 401, f\"expected HTTP 401, received {response.status_code} for GET /api/profile\"\nE       AssertionError: expected HTTP 401, received 200 for GET /api/profile\nE       assert 200 == 401\nE        +  where 200 = <Response [200 OK]>.status_code\n\ntests/test_milestone.py:23: AssertionError",
+      "http_status": 200,
+      "endpoint": "/api/profile",
+      "bug_id": "BUG-02",
+      "browser": null,
+      "retry": 0,
+      "duration": 0.01315095899917651,
+      "commit": "local",
+      "screenshot": null,
+      "trace": null,
+      "network_errors": []
+    },
+    {
+      "test_name": "tests/test_milestone.py::test_expired_auth_token_is_rejected[2]",
+      "suite": "test_milestone",
+      "timestamp": "2026-10-05T17:32:14.064241+00:00",
+      "error_message": "tests/test_milestone.py:23: AssertionError",
+      "stack_trace": "case = 2\n\n    @pytest.mark.parametrize(\"case\", range(8))\n    @pytest.mark.failure_context(endpoint=\"/api/profile\", status=200, bug_id=\"BUG-02\")\n    def test_expired_auth_token_is_rejected(case: int) -> None:\n        response = client.get(\"/api/profile\", headers={\"Authorization\": f\"Bearer expired-user-{case}\"})\n>       assert response.status_code == 401, f\"expected HTTP 401, received {response.status_code} for GET /api/profile\"\nE       AssertionError: expected HTTP 401, received 200 for GET /api/profile\nE       assert 200 == 401\nE        +  where 200 = <Response [200 OK]>.status_code\n\ntests/test_milestone.py:23: AssertionError",
+      "http_status": 200,
+      "endpoint": "/api/profile",
+      "bug_id": "BUG-02",
+      "browser": null,
+      "retry": 0,
+      "duration": 0.0061214999986987095,
+      "commit": "local",
+      "screenshot": null,
+      "trace": null,
+      "network_errors": []
+    },
+    {
+      "test_name": "tests/test_milestone.py::test_expired_auth_token_is_rejected[3]",
+      "suite": "test_milestone",
+      "timestamp": "2026-10-05T17:32:14.071169+00:00",
+      "error_message": "tests/test_milestone.py:23: AssertionError",
+      "stack_trace": "case = 3\n\n    @pytest.mark.parametrize(\"case\", range(8))\n    @pytest.mark.failure_context(endpoint=\"/api/profile\", status=200, bug_id=\"BUG-02\")\n    def test_expired_auth_token_is_rejected(case: int) -> None:\n        response = client.get(\"/api/profile\", headers={\"Authorization\": f\"Bearer expired-user-{case}\"})\n>       assert response.status_code == 401, f\"expected HTTP 401, received {response.status_code} for GET /api/profile\"\nE       AssertionError: expected HTTP 401, received 200 for GET /api/profile\nE       assert 200 == 401\nE        +  where 200 = <Response [200 OK]>.status_code\n\ntests/test_milestone.py:23: AssertionError",
+      "http_status": 200,
+      "endpoint": "/api/profile",
+      "bug_id": "BUG-02",
+      "browser": null,
+      "retry": 0,
+      "duration": 0.0025637500002630986,
+      "commit": "local",
+      "screenshot": null,
+      "trace": null,
+      "network_errors": []
+    },
+    {
+      "test_name": "tests/test_milestone.py::test_expired_auth_token_is_rejected[4]",
+      "suite": "test_milestone",
+      "timestamp": "2026-10-05T17:32:14.077147+00:00",
+      "error_message": "tests/test_milestone.py:23: AssertionError",
+      "stack_trace": "case = 4\n\n    @pytest.mark.parametrize(\"case\", range(8))\n    @pytest.mark.failure_context(endpoint=\"/api/profile\", status=200, bug_id=\"BUG-02\")\n    def test_expired_auth_token_is_rejected(case: int) -> None:\n        response = client.get(\"/api/profile\", headers={\"Authorization\": f\"Bearer expired-user-{case}\"})\n>       assert response.status_code == 401, f\"expected HTTP 401, received {response.status_code} for GET /api/profile\"\nE       AssertionError: expected HTTP 401, received 200 for GET /api/profile\nE       assert 200 == 401\nE        +  where 200 = <Response [200 OK]>.status_code\n\ntests/test_milestone.py:23: AssertionError",
+      "http_status": 200,
+      "endpoint": "/api/profile",
+      "bug_id": "BUG-02",
+      "browser": null,
+      "retry": 0,
+      "duration": 0.0027153749997523846,
+      "commit": "local",
+      "screenshot": null,
+      "trace": null,
+      "network_errors": []
+    },
+    {
+      "test_name": "tests/test_milestone.py::test_expired_auth_token_is_rejected[5]",
+      "suite": "test_milestone",
+      "timestamp": "2026-10-05T17:32:14.082540+00:00",
+      "error_message": "tests/test_milestone.py:23: AssertionError",
+      "stack_trace": "case = 5\n\n    @pytest.mark.parametrize(\"case\", range(8))\n    @pytest.mark.failure_context(endpoint=\"/api/profile\", status=200, bug_id=\"BUG-02\")\n    def test_expired_auth_token_is_rejected(case: int) -> None:\n        response = client.get(\"/api/profile\", headers={\"Authorization\": f\"Bearer expired-user-{case}\"})\n>       assert response.status_code == 401, f\"expected HTTP 401, received {response.status_code} for GET /api/profile\"\nE       AssertionError: expected HTTP 401, received 200 for GET /api/profile\nE       assert 200 == 401\nE        +  where 200 = <Response [200 OK]>.status_code\n\ntests/test_milestone.py:23: AssertionError",
+      "http_status": 200,
+      "endpoint": "/api/profile",
+      "bug_id": "BUG-02",
+      "browser": null,
+      "retry": 0,
+      "duration": 0.002261292000184767,
+      "commit": "local",
+      "screenshot": null,
+      "trace": null,
+      "network_errors": []
+    },
+    {
+      "test_name": "tests/test_milestone.py::test_expired_auth_token_is_rejected[6]",
+      "suite": "test_milestone",
+      "timestamp": "2026-10-05T17:32:14.087881+00:00",
+      "error_message": "tests/test_milestone.py:23: AssertionError",
+      "stack_trace": "case = 6\n\n    @pytest.mark.parametrize(\"case\", range(8))\n    @pytest.mark.failure_context(endpoint=\"/api/profile\", status=200, bug_id=\"BUG-02\")\n    def test_expired_auth_token_is_rejected(case: int) -> None:\n        response = client.get(\"/api/profile\", headers={\"Authorization\": f\"Bearer expired-user-{case}\"})\n>       assert response.status_code == 401, f\"expected HTTP 401, received {response.status_code} for GET /api/profile\"\nE       AssertionError: expected HTTP 401, received 200 for GET /api/profile\nE       assert 200 == 401\nE        +  where 200 = <Response [200 OK]>.status_code\n\ntests/test_milestone.py:23: AssertionError",
+      "http_status": 200,
+      "endpoint": "/api/profile",
+      "bug_id": "BUG-02",
+      "browser": null,
+      "retry": 0,
+      "duration": 0.0022887079994688975,
+      "commit": "local",
+      "screenshot": null,
+      "trace": null,
+      "network_errors": []
+    },
+    {
+      "test_name": "tests/test_milestone.py::test_expired_auth_token_is_rejected[7]",
+      "suite": "test_milestone",
+      "timestamp": "2026-10-05T17:32:14.093489+00:00",
+      "error_message": "tests/test_milestone.py:23: AssertionError",
+      "stack_trace": "case = 7\n\n    @pytest.mark.parametrize(\"case\", range(8))\n    @pytest.mark.failure_context(endpoint=\"/api/profile\", status=200, bug_id=\"BUG-02\")\n    def test_expired_auth_token_is_rejected(case: int) -> None:\n        response = client.get(\"/api/profile\", headers={\"Authorization\": f\"Bearer expired-user-{case}\"})\n>       assert response.status_code == 401, f\"expected HTTP 401, received {response.status_code} for GET /api/profile\"\nE       AssertionError: expected HTTP 401, received 200 for GET /api/profile\nE       assert 200 == 401\nE        +  where 200 = <Response [200 OK]>.status_code\n\ntests/test_milestone.py:23: AssertionError",
+      "http_status": 200,
+      "endpoint": "/api/profile",
+      "bug_id": "BUG-02",
+      "browser": null,
+      "retry": 0,
+      "duration": 0.0024443750007776543,
+      "commit": "local",
+      "screenshot": null,
+      "trace": null,
+      "network_errors": []
+    },
+    {
+      "test_name": "tests/test_milestone.py::test_cart_total_for_quantity_above_five[6]",
+      "suite": "test_milestone",
+      "timestamp": "2026-10-05T17:32:14.099774+00:00",
+      "error_message": "tests/test_milestone.py:31: AssertionError",
+      "stack_trace": "quantity = 6\n\n    @pytest.mark.parametrize(\"quantity\", range(6, 11))\n    @pytest.mark.failure_context(endpoint=\"/api/cart/total\", status=200, bug_id=\"BUG-03\")\n    def test_cart_total_for_quantity_above_five(quantity: int) -> None:\n        response = client.post(\"/api/cart/total\", json={\"unit_price_cents\": 200, \"quantity\": quantity})\n        expected = 200 * quantity\n>       assert response.json()[\"total_cents\"] == expected, (\n            f\"expected total {expected} cents, received {response.json()['total_cents']} cents\"\n        )\nE       AssertionError: expected total 1200 cents, received 1000 cents\nE       assert 1000 == 1200\n\ntests/test_milestone.py:31: AssertionError",
+      "http_status": 200,
+      "endpoint": "/api/cart/total",
+      "bug_id": "BUG-03",
+      "browser": null,
+      "retry": 0,
+      "duration": 0.0027023749989893986,
+      "commit": "local",
+      "screenshot": null,
+      "trace": null,
+      "network_errors": []
+    },
+    {
+      "test_name": "tests/test_milestone.py::test_cart_total_for_quantity_above_five[7]",
+      "suite": "test_milestone",
+      "timestamp": "2026-10-05T17:32:14.105624+00:00",
+      "error_message": "tests/test_milestone.py:31: AssertionError",
+      "stack_trace": "quantity = 7\n\n    @pytest.mark.parametrize(\"quantity\", range(6, 11))\n    @pytest.mark.failure_context(endpoint=\"/api/cart/total\", status=200, bug_id=\"BUG-03\")\n    def test_cart_total_for_quantity_above_five(quantity: int) -> None:\n        response = client.post(\"/api/cart/total\", json={\"unit_price_cents\": 200, \"quantity\": quantity})\n        expected = 200 * quantity\n>       assert response.json()[\"total_cents\"] == expected, (\n            f\"expected total {expected} cents, received {response.json()['total_cents']} cents\"\n        )\nE       AssertionError: expected total 1400 cents, received 1200 cents\nE       assert 1200 == 1400\n\ntests/test_milestone.py:31: AssertionError",
+      "http_status": 200,
+      "endpoint": "/api/cart/total",
+      "bug_id": "BUG-03",
+      "browser": null,
+      "retry": 0,
+      "duration": 0.002358916999583016,
+      "commit": "local",
+      "screenshot": null,
+      "trace": null,
+      "network_errors": []
+    },
+    {
+      "test_name": "tests/test_milestone.py::test_cart_total_for_quantity_above_five[8]",
+      "suite": "test_milestone",
+      "timestamp": "2026-10-05T17:32:14.111223+00:00",
+      "error_message": "tests/test_milestone.py:31: AssertionError",
+      "stack_trace": "quantity = 8\n\n    @pytest.mark.parametrize(\"quantity\", range(6, 11))\n    @pytest.mark.failure_context(endpoint=\"/api/cart/total\", status=200, bug_id=\"BUG-03\")\n    def test_cart_total_for_quantity_above_five(quantity: int) -> None:\n        response = client.post(\"/api/cart/total\", json={\"unit_price_cents\": 200, \"quantity\": quantity})\n        expected = 200 * quantity\n>       assert response.json()[\"total_cents\"] == expected, (\n            f\"expected total {expected} cents, received {response.json()['total_cents']} cents\"\n        )\nE       AssertionError: expected total 1600 cents, received 1400 cents\nE       assert 1400 == 1600\n\ntests/test_milestone.py:31: AssertionError",
+      "http_status": 200,
+      "endpoint": "/api/cart/total",
+      "bug_id": "BUG-03",
+      "browser": null,
+      "retry": 0,
+      "duration": 0.002411749999737367,
+      "commit": "local",
+      "screenshot": null,
+      "trace": null,
+      "network_errors": []
+    },
+    {
+      "test_name": "tests/test_milestone.py::test_cart_total_for_quantity_above_five[9]",
+      "suite": "test_milestone",
+      "timestamp": "2026-10-05T17:32:14.116897+00:00",
+      "error_message": "tests/test_milestone.py:31: AssertionError",
+      "stack_trace": "quantity = 9\n\n    @pytest.mark.parametrize(\"quantity\", range(6, 11))\n    @pytest.mark.failure_context(endpoint=\"/api/cart/total\", status=200, bug_id=\"BUG-03\")\n    def test_cart_total_for_quantity_above_five(quantity: int) -> None:\n        response = client.post(\"/api/cart/total\", json={\"unit_price_cents\": 200, \"quantity\": quantity})\n        expected = 200 * quantity\n>       assert response.json()[\"total_cents\"] == expected, (\n            f\"expected total {expected} cents, received {response.json()['total_cents']} cents\"\n        )\nE       AssertionError: expected total 1800 cents, received 1600 cents\nE       assert 1600 == 1800\n\ntests/test_milestone.py:31: AssertionError",
+      "http_status": 200,
+      "endpoint": "/api/cart/total",
+      "bug_id": "BUG-03",
+      "browser": null,
+      "retry": 0,
+      "duration": 0.002159667001251364,
+      "commit": "local",
+      "screenshot": null,
+      "trace": null,
+      "network_errors": []
+    },
+    {
+      "test_name": "tests/test_milestone.py::test_cart_total_for_quantity_above_five[10]",
+      "suite": "test_milestone",
+      "timestamp": "2026-10-05T17:32:14.123528+00:00",
+      "error_message": "tests/test_milestone.py:31: AssertionError",
+      "stack_trace": "quantity = 10\n\n    @pytest.mark.parametrize(\"quantity\", range(6, 11))\n    @pytest.mark.failure_context(endpoint=\"/api/cart/total\", status=200, bug_id=\"BUG-03\")\n    def test_cart_total_for_quantity_above_five(quantity: int) -> None:\n        response = client.post(\"/api/cart/total\", json={\"unit_price_cents\": 200, \"quantity\": quantity})\n        expected = 200 * quantity\n>       assert response.json()[\"total_cents\"] == expected, (\n            f\"expected total {expected} cents, received {response.json()['total_cents']} cents\"\n        )\nE       AssertionError: expected total 2000 cents, received 1800 cents\nE       assert 1800 == 2000\n\ntests/test_milestone.py:31: AssertionError",
+      "http_status": 200,
+      "endpoint": "/api/cart/total",
+      "bug_id": "BUG-03",
+      "browser": null,
+      "retry": 0,
+      "duration": 0.002834874998370651,
+      "commit": "local",
+      "screenshot": null,
+      "trace": null,
+      "network_errors": []
+    }
+  ],
+  "outcomes": [
+    {
+      "test_name": "tests/test_milestone.py::test_checkout_rejects_broken_coupon[0]",
+      "phase": "call",
+      "outcome": "failed",
+      "expected_bug": "BUG-01"
+    },
+    {
+      "test_name": "tests/test_milestone.py::test_checkout_rejects_broken_coupon[1]",
+      "phase": "call",
+      "outcome": "failed",
+      "expected_bug": "BUG-01"
+    },
+    {
+      "test_name": "tests/test_milestone.py::test_checkout_rejects_broken_coupon[2]",
+      "phase": "call",
+      "outcome": "failed",
+      "expected_bug": "BUG-01"
+    },
+    {
+      "test_name": "tests/test_milestone.py::test_checkout_rejects_broken_coupon[3]",
+      "phase": "call",
+      "outcome": "failed",
+      "expected_bug": "BUG-01"
+    },
+    {
+      "test_name": "tests/test_milestone.py::test_checkout_rejects_broken_coupon[4]",
+      "phase": "call",
+      "outcome": "failed",
+      "expected_bug": "BUG-01"
+    },
+    {
+      "test_name": "tests/test_milestone.py::test_checkout_rejects_broken_coupon[5]",
+      "phase": "call",
+      "outcome": "failed",
+      "expected_bug": "BUG-01"
+    },
+    {
+      "test_name": "tests/test_milestone.py::test_checkout_rejects_broken_coupon[6]",
+      "phase": "call",
+      "outcome": "failed",
+      "expected_bug": "BUG-01"
+    },
+    {
+      "test_name": "tests/test_milestone.py::test_checkout_rejects_broken_coupon[7]",
+      "phase": "call",
+      "outcome": "failed",
+      "expected_bug": "BUG-01"
+    },
+    {
+      "test_name": "tests/test_milestone.py::test_checkout_rejects_broken_coupon[8]",
+      "phase": "call",
+      "outcome": "failed",
+      "expected_bug": "BUG-01"
+    },
+    {
+      "test_name": "tests/test_milestone.py::test_checkout_rejects_broken_coupon[9]",
+      "phase": "call",
+      "outcome": "failed",
+      "expected_bug": "BUG-01"
+    },
+    {
+      "test_name": "tests/test_milestone.py::test_checkout_rejects_broken_coupon[10]",
+      "phase": "call",
+      "outcome": "failed",
+      "expected_bug": "BUG-01"
+    },
+    {
+      "test_name": "tests/test_milestone.py::test_checkout_rejects_broken_coupon[11]",
+      "phase": "call",
+      "outcome": "failed",
+      "expected_bug": "BUG-01"
+    },
+    {
+      "test_name": "tests/test_milestone.py::test_checkout_rejects_broken_coupon[12]",
+      "phase": "call",
+      "outcome": "failed",
+      "expected_bug": "BUG-01"
+    },
+    {
+      "test_name": "tests/test_milestone.py::test_checkout_rejects_broken_coupon[13]",
+      "phase": "call",
+      "outcome": "failed",
+      "expected_bug": "BUG-01"
+    },
+    {
+      "test_name": "tests/test_milestone.py::test_checkout_rejects_broken_coupon[14]",
+      "phase": "call",
+      "outcome": "failed",
+      "expected_bug": "BUG-01"
+    },
+    {
+      "test_name": "tests/test_milestone.py::test_expired_auth_token_is_rejected[0]",
+      "phase": "call",
+      "outcome": "failed",
+      "expected_bug": "BUG-02"
+    },
+    {
+      "test_name": "tests/test_milestone.py::test_expired_auth_token_is_rejected[1]",
+      "phase": "call",
+      "outcome": "failed",
+      "expected_bug": "BUG-02"
+    },
+    {
+      "test_name": "tests/test_milestone.py::test_expired_auth_token_is_rejected[2]",
+      "phase": "call",
+      "outcome": "failed",
+      "expected_bug": "BUG-02"
+    },
+    {
+      "test_name": "tests/test_milestone.py::test_expired_auth_token_is_rejected[3]",
+      "phase": "call",
+      "outcome": "failed",
+      "expected_bug": "BUG-02"
+    },
+    {
+      "test_name": "tests/test_milestone.py::test_expired_auth_token_is_rejected[4]",
+      "phase": "call",
+      "outcome": "failed",
+      "expected_bug": "BUG-02"
+    },
+    {
+      "test_name": "tests/test_milestone.py::test_expired_auth_token_is_rejected[5]",
+      "phase": "call",
+      "outcome": "failed",
+      "expected_bug": "BUG-02"
+    },
+    {
+      "test_name": "tests/test_milestone.py::test_expired_auth_token_is_rejected[6]",
+      "phase": "call",
+      "outcome": "failed",
+      "expected_bug": "BUG-02"
+    },
+    {
+      "test_name": "tests/test_milestone.py::test_expired_auth_token_is_rejected[7]",
+      "phase": "call",
+      "outcome": "failed",
+      "expected_bug": "BUG-02"
+    },
+    {
+      "test_name": "tests/test_milestone.py::test_cart_total_for_quantity_above_five[6]",
+      "phase": "call",
+      "outcome": "failed",
+      "expected_bug": "BUG-03"
+    },
+    {
+      "test_name": "tests/test_milestone.py::test_cart_total_for_quantity_above_five[7]",
+      "phase": "call",
+      "outcome": "failed",
+      "expected_bug": "BUG-03"
+    },
+    {
+      "test_name": "tests/test_milestone.py::test_cart_total_for_quantity_above_five[8]",
+      "phase": "call",
+      "outcome": "failed",
+      "expected_bug": "BUG-03"
+    },
+    {
+      "test_name": "tests/test_milestone.py::test_cart_total_for_quantity_above_five[9]",
+      "phase": "call",
+      "outcome": "failed",
+      "expected_bug": "BUG-03"
+    },
+    {
+      "test_name": "tests/test_milestone.py::test_cart_total_for_quantity_above_five[10]",
+      "phase": "call",
+      "outcome": "failed",
+      "expected_bug": "BUG-03"
+    },
+    {
+      "test_name": "tests/test_milestone.py::test_health_endpoint[/api/health0]",
+      "phase": "call",
+      "outcome": "passed",
+      "expected_bug": null
+    },
+    {
+      "test_name": "tests/test_milestone.py::test_health_endpoint[/api/health1]",
+      "phase": "call",
+      "outcome": "passed",
+      "expected_bug": null
+    },
+    {
+      "test_name": "tests/test_milestone.py::test_health_endpoint[/api/health2]",
+      "phase": "call",
+      "outcome": "passed",
+      "expected_bug": null
+    },
+    {
+      "test_name": "tests/test_milestone.py::test_health_endpoint[/api/health3]",
+      "phase": "call",
+      "outcome": "passed",
+      "expected_bug": null
+    },
+    {
+      "test_name": "tests/test_milestone.py::test_checkout_without_injected_defect[None]",
+      "phase": "call",
+      "outcome": "passed",
+      "expected_bug": null
+    },
+    {
+      "test_name": "tests/test_milestone.py::test_checkout_without_injected_defect[SAVE5]",
+      "phase": "call",
+      "outcome": "passed",
+      "expected_bug": null
+    },
+    {
+      "test_name": "tests/test_milestone.py::test_checkout_without_injected_defect[UNKNOWN]",
+      "phase": "call",
+      "outcome": "passed",
+      "expected_bug": null
+    },
+    {
+      "test_name": "tests/test_milestone.py::test_checkout_without_injected_defect[WELCOME]",
+      "phase": "call",
+      "outcome": "passed",
+      "expected_bug": null
+    },
+    {
+      "test_name": "tests/test_milestone.py::test_valid_auth_token[alice]",
+      "phase": "call",
+      "outcome": "passed",
+      "expected_bug": null
+    },
+    {
+      "test_name": "tests/test_milestone.py::test_valid_auth_token[bob]",
+      "phase": "call",
+      "outcome": "passed",
+      "expected_bug": null
+    },
+    {
+      "test_name": "tests/test_milestone.py::test_valid_auth_token[casey]",
+      "phase": "call",
+      "outcome": "passed",
+      "expected_bug": null
+    },
+    {
+      "test_name": "tests/test_milestone.py::test_valid_auth_token[devon]",
+      "phase": "call",
+      "outcome": "passed",
+      "expected_bug": null
+    },
+    {
+      "test_name": "tests/test_milestone.py::test_profile_rejects_missing_authentication",
+      "phase": "call",
+      "outcome": "passed",
+      "expected_bug": null
+    },
+    {
+      "test_name": "tests/test_milestone.py::test_cart_total_at_or_below_five[1]",
+      "phase": "call",
+      "outcome": "passed",
+      "expected_bug": null
+    },
+    {
+      "test_name": "tests/test_milestone.py::test_cart_total_at_or_below_five[2]",
+      "phase": "call",
+      "outcome": "passed",
+      "expected_bug": null
+    },
+    {
+      "test_name": "tests/test_milestone.py::test_cart_total_at_or_below_five[3]",
+      "phase": "call",
+      "outcome": "passed",
+      "expected_bug": null
+    },
+    {
+      "test_name": "tests/test_milestone.py::test_cart_total_at_or_below_five[4]",
+      "phase": "call",
+      "outcome": "passed",
+      "expected_bug": null
+    },
+    {
+      "test_name": "tests/test_milestone.py::test_fingerprint_normalizes_run_specific_noise[0]",
+      "phase": "call",
+      "outcome": "passed",
+      "expected_bug": null
+    },
+    {
+      "test_name": "tests/test_milestone.py::test_fingerprint_normalizes_run_specific_noise[1]",
+      "phase": "call",
+      "outcome": "passed",
+      "expected_bug": null
+    },
+    {
+      "test_name": "tests/test_milestone.py::test_fingerprint_normalizes_run_specific_noise[2]",
+      "phase": "call",
+      "outcome": "passed",
+      "expected_bug": null
+    },
+    {
+      "test_name": "tests/test_milestone.py::test_fingerprint_normalizes_run_specific_noise[3]",
+      "phase": "call",
+      "outcome": "passed",
+      "expected_bug": null
+    },
+    {
+      "test_name": "tests/test_milestone.py::test_fingerprint_normalizes_run_specific_noise[4]",
+      "phase": "call",
+      "outcome": "passed",
+      "expected_bug": null
+    }
+  ]
+}
