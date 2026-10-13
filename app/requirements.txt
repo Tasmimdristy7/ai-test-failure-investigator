@@ -1,0 +1,6 @@
+# Streamlit Cloud checks the entrypoint directory before the repository root.
+# Cloud executes from the repository root, so install this project's extras.
+-e .[dashboard,dev]
+plotly>=5.20,<7
+streamlit>=1.49,<2
+pandas>=2.2,<3
