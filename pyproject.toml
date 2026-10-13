@@ -9,7 +9,8 @@ description = "A deliberately buggy e-commerce testbed and deterministic failure
 requires-python = ">=3.9"
 dependencies = [
     "fastapi>=0.110,<1",
-    "scikit-learn>=1.3,<1.7",
+    "scikit-learn>=1.3,<1.7; python_version < '3.14'",
+    "scikit-learn>=1.8,<1.9; python_version >= '3.14'",
     "uvicorn[standard]>=0.27,<1",
 ]
 
